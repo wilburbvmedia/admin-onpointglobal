@@ -1,4 +1,4 @@
-<%@page import="java.util.*, com.util.*, org.json.JSONArray,org.json.JSONException"%>
+<%@page import="java.util.*, com.util.*, org.json.*"%>
 
 <%
 try 
