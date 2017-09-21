@@ -8,6 +8,8 @@ if( session.getAttribute("hrlogin") == null )
 }
 %>
 <%
+com.servlets.Cache.reset();
+
 ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,message,cv from applications" );
 %>
 <%@include  file="./header.html" %>
