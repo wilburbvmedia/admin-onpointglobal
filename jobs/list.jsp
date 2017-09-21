@@ -1,6 +1,7 @@
 <%@page import="java.util.*, com.util.*"%>
 
 <%
+	com.servlets.Cache.reset();
 	ArrayList ra = DB.getData( "select * from jobs" );
 %>
 
@@ -35,7 +36,7 @@ if( session.getAttribute("hrlogin") == null )
           </div>
           <div class="box-body">
             <h1>Jobs List</h1>
-		<table id="raTable" class="display" cellspacing="0" width="100%">
+		<table id="raTable" class="display table table-bordered table-hover dataTable" cellspacing="0" width="100%">
         	<thead>
             	<tr>
                 	<th class="tab">ID</th>

@@ -28,25 +28,17 @@ function ajax_job(a,x) {
 	}
 	
 	if (a == 'delete') {
-		var job_title = $('#job_title').val();
-		var job_date = $('#job_date').val();
-		var job_location = $('#job_location').val();
-		var job_type = $('#job_type').val();
-		var job_description = $('#job_description').val();
 
 		$.ajax({//Comunicación jQuery hacia JSP
 			type : "POST",
-			url : "../job_ajax_add.jsp",
+			url : "../job_ajax_delete.jsp",
 			data : {
-				'job_title' : job_title,
-				'job_date' : job_date,
-				'job_location' : job_location,
-				'job_type' : job_type,
-				'job_description' : job_description
+				'id_job' : x
 			},
 			success : function(msg) {
 				//alert(msg);
-				alert("Job Added Successfully.");
+				alert("Job Delete Successfully.");
+				location.reload();
 			},
 			error : function(xml, msg) {
 				//alert(msg);
