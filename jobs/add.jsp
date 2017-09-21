@@ -1,5 +1,11 @@
 <%@page import="java.util.*, com.util.*"%>
-
+<%
+if( session.getAttribute("hrlogin") == null )
+ {
+  com.util.Web.redirect( response, 302, "./login.jsp" );
+  return;
+}
+%>
 
 <%@include  file="../templates/header.html" %>
 
@@ -9,7 +15,7 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			Onpoint Applications Dashboard
+			Jobs Maintenance
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

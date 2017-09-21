@@ -1,15 +1,27 @@
 <%@page import="java.util.*, com.util.*"%>
-
+<%
+if( session.getAttribute("hrlogin") == null )
+ {
+  com.util.Web.redirect( response, 302, "./login.jsp" );
+  return;
+}
+%>
 
 <%@include  file="../templates/header.html" %>
 
+<%
+	String jobid = request.getParameter("j").toString();
+	String sql = "select * from jobs where id_job='" + jobid + "'";
+    HashMap hm = DB.getRecord( sql );	
+%>
 
-<!-- Content Wrapper. XXXX Contains page content -->
+
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			Onpoint Applications Dashboard
+			Jobs Maintenance
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -21,37 +33,37 @@
 	<section class="content">
 		<div class="box">
 			<div class="box-header">
-				<h3 class="box-title">Add Job</h3>
+				<h3 class="box-title">Edit Job ID: <%=hm.get("id_job").toString()%></h3>
 			</div>
 			<div class="box-body">
-				<form role="form" method="post" action="javascript:ajax_job('add',0)">
+				<form role="form" method="post" action="javascript:ajax_job('edit',<%=jobid%>)">
 					<div class="box-bodydfsdf">
 						<div class="form-group">
 							<label for="job_title">Job Title</label>
-							<input type="text" class="form-control" id="job_title" name="job_title" placeholder="Enter Title" data-validation="required">
+							<input type="text" class="form-control" id="job_title" name="job_title" placeholder="Enter Title" data-validation="required" value="<%=hm.get("job_title").toString()%>">
 						</div>
 						<div class="form-group">
 							<label for="job_date">Date</label>
-							<input type="text" class="form-control" id="job_date" name="job_date" placeholder="Enter Date" data-validation="required">
+							<input type="text" class="form-control" id="job_date" name="job_date" placeholder="Enter Date" data-validation="required" value="<%=hm.get("date").toString()%>">
 						</div>
 						<div class="form-group">
 							<label for="job_location">Location</label>
-							<input type="text" class="form-control" id="job_location" name="job_location" placeholder="Enter Location" data-validation="required">
+							<input type="text" class="form-control" id="job_location" name="job_location" placeholder="Enter Location" data-validation="required" value="<%=hm.get("location").toString()%>">
 						</div>	
 						<div class="form-group">
 							<label for="job_type">Job Type</label>
-							<input type="text" class="form-control" id="job_type" name="job_type" placeholder="Enter Type" data-validation="required">
+							<input type="text" class="form-control" id="job_type" name="job_type" placeholder="Enter Type" data-validation="required" value="<%=hm.get("job_type").toString()%>">
 						</div>				
 						<div class="form-group">
 							<label for="job_description">Job Description</label>
-							<textarea data-validation="required" id="job_description" name="job_description" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+							<textarea data-validation="required" id="job_description" name="job_description" class="form-control" rows="3" placeholder="Enter ..."><%=hm.get("description").toString()%></textarea>
 						</div>
 					</div>
 					<!-- /.box-body -->
 					<div class="box-footer">
 						<div class="form-group">
 							<button class="btn">
-								Add Job
+								Edit Job
 							</button>
 						</div>
 					</div>

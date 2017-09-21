@@ -1,5 +1,11 @@
 <%@page import="java.util.*, com.util.*"%>
-
+<%
+if( session.getAttribute("hrlogin") == null )
+ {
+  com.util.Web.redirect( response, 302, "./login.jsp" );
+  return;
+}
+%>
 <%
 	com.servlets.Cache.reset();
 	ArrayList ra = DB.getData( "select * from jobs" );
@@ -71,7 +77,7 @@ if( session.getAttribute("hrlogin") == null )
 					<td class="tab"><%=hm.get("job_type").toString()%></td>
 					<td class="tab">
 						<div class="btn-group">
-							<a class="btn btn-warning" onClick="ajax_job('edit',<%=hm.get("id_job").toString()%>)">
+							<a class="btn btn-warning" onClick="ajax_job('getedit',<%=hm.get("id_job").toString()%>)">
 								<i class="fa fa-fw fa-edit"></i>
 							</a>
 							<a class="btn btn-danger" onClick="ajax_job('delete',<%=hm.get("id_job").toString()%>)">
