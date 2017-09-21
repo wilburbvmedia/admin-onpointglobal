@@ -78,7 +78,7 @@ if( session.getAttribute("hrlogin") == null )
 
 
 
-<script src="//cdn.ckeditor.com/4.7.3/basic/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 <script>
 	CKEDITOR.replace( 'job_description' );
 </script>
