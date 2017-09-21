@@ -10,10 +10,11 @@ try
 
 	JSONArray json = new JSONArray();
 
-for	 (int i = 0; i < ra.size(); i++) {
+	for	 (int i = 0; i < ra.size(); i++) {
 		json.put(ra.get(i));
 	}
 	out.print(json);
+	
 } catch (Exception e)
 {
 	out.print("Error here");
