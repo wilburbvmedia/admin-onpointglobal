@@ -1,4 +1,5 @@
 <%
+   com.servlets.Cache.reset();
    if( session.getAttribute("hrlogin")!=null )
    {
       com.util.Web.redirect( response, 302, "./hradmin.jsp" );

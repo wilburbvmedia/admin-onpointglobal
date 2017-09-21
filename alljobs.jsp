@@ -1,6 +1,22 @@
-<%@page import="java.util.*, com.util.*"%>
+<%@page import="java.util.*, com.util.*, org.json.JSONArray,org.json.JSONException"%>
 
 <%
-  ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,message,cv from jobs" );
-	out.print(ra);
+try 
+{
+	com.servlets.Cache.reset();
+	response.setContentType("application/json");
+   	response.setHeader("Content-Disposition", "inline");
+	ArrayList ra = DB.getData( "select * from jobs" );
+
+	JSONArray json = new JSONArray();
+
+	for	 (int i = 0; i < ra.size(); i++) {
+		json.put(ra.get(i));
+	}
+	out.print(json);
+	
+} catch (Exception e)
+{
+	out.print("Error here");
+}
 %>
