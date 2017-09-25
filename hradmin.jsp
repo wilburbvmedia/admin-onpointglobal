@@ -10,7 +10,7 @@ if( session.getAttribute("hrlogin") == null )
 <%
 com.servlets.Cache.reset();
 
-ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,message,cv from applications" );
+ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,message,cv,domain from applications" );
 %>
 <%@include  file="./header.html" %>
 
@@ -43,6 +43,7 @@ ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,messa
                   <th class="tab">Phone</th>
                   <th class="tab">Subject</th>
                   <th class="tab">Message</th>
+                  <th class="tab">Domain</th>
                   <th class="tab">Resume</th>
                 </tr>
               </thead>
@@ -54,6 +55,7 @@ ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,messa
                   <th class="tab">Phone</th>
                   <th class="tab">Subject</th>
                   <th class="tab">Message</th>
+                  <th class="tab">Domain</th>
                   <th class="tab">Resume</th>
                 </tr>
               </tfoot>
@@ -70,6 +72,7 @@ ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,messa
                     <td class="tab"><%=hm.get("phone").toString()%></td>
                     <td class="tab"><%=hm.get("subject").toString()%></td>
                     <td class="tab"><%=hm.get("message").toString()%></td>
+                    <td class="tab"><%=hm.get("domain").toString()%></td>
                     <td class="tab"><a class="btncv" href="<%=hm.get("cv").toString()%>" download>Dowload</a></td>
                   </tr>
                   <%

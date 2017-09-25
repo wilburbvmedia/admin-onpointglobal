@@ -48,8 +48,12 @@ if( session.getAttribute("hrlogin") == null )
 						</div>
 						<div class="form-group">
 							<label for="job_location">Location</label>
-							<input type="text" class="form-control" id="job_location" name="job_location" placeholder="Enter Location" data-validation="required" value="<%=hm.get("location").toString()%>">
-						</div>	
+							<select id="job_location" name="job_location" class="form-control">
+							    <option value="<%=hm.get("location").toString()%>"><%=hm.get("location").toString()%></option>
+			                    <option value="Miami,Florida">Miami, Florida</option>
+			                    <option value="Rio Segundo,Alajuela">Rio Segundo, Alajuela</option>
+			                </select>
+			            </div>	
 						<div class="form-group">
 							<label for="job_type">Job Type</label>
 							<input type="text" class="form-control" id="job_type" name="job_type" placeholder="Enter Type" data-validation="required" value="<%=hm.get("job_type").toString()%>">

@@ -4,13 +4,14 @@
    String sql;
    
    try{
-        sql = "INSERT INTO applications (name,email,phone,subject,message,cv) values ('" + 
+        sql = "INSERT INTO applications (name,email,phone,subject,message,cv,domain) values ('" + 
                 request.getParameter("name").toString() + "','" +
                 request.getParameter("email").toString() + "','" +
                 request.getParameter("phone").toString() + "','" +
                 request.getParameter("subject").toString() + "','" +
                 request.getParameter("message").toString() + "','" +
-                request.getParameter("resume").toString() + "')";
+                request.getParameter("resume").toString() + "','" +
+                request.getParameter("domain").toString() + "')";
         DB.executeSQL(sql);         
         message  =  sql;
     }
