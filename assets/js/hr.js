@@ -3,6 +3,7 @@ function ajax_job(a, x) {
 		var job_title = $('#job_title').val();
 		var job_date = $('#job_date').val();
 		var job_location = $('#job_location').val();
+		var job_domain = $('#job_domain').val();
 		var job_type = $('#job_type').val();
 		var job_description = $('#job_description').val();
 
@@ -13,6 +14,7 @@ function ajax_job(a, x) {
 				'job_title' : job_title,
 				'job_date' : job_date,
 				'job_location' : job_location,
+				'job_domain' : job_domain,
 				'job_type' : job_type,
 				'job_description' : job_description
 			},
@@ -32,6 +34,7 @@ function ajax_job(a, x) {
 		var job_title = $('#job_title').val();
 		var job_date = $('#job_date').val();
 		var job_location = $('#job_location').val();
+		var job_domain = $('#job_domain').val();
 		var job_type = $('#job_type').val();
 		var job_description = $('#job_description').val();
 
@@ -43,6 +46,7 @@ function ajax_job(a, x) {
 				'job_title' : job_title,
 				'job_date' : job_date,
 				'job_location' : job_location,
+				'job_domain' : job_domain,
 				'job_type' : job_type,
 				'job_description' : job_description
 			},

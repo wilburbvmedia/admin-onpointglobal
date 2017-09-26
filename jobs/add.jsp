@@ -42,11 +42,15 @@ if( session.getAttribute("hrlogin") == null )
 						</div>
 						<div class="form-group">
 							<label for="job_location">Location</label>
-							<select id="job_location" name="job_location" class="form-control">
-			                    <option value="Miami,Florida">Miami, Florida</option>
-			                    <option value="Rio Segundo,Alajuela">Rio Segundo, Alajuela</option>
+							<input type="text" class="form-control" id="job_location" name="job_location" placeholder="Enter Location" data-validation="required">
+						</div>
+						<div class="form-group">
+							<label for="job_domain">Domain</label>
+							<select id="job_domain" name="job_domain" class="form-control">
+			                    <option value="onpointglobal.com">OnpointGlobal.com</option>
+			                    <option value="bvmedia.cr">BVMedia.cr</option>
 			                </select>
-						</div>	
+						</div>		
 						<div class="form-group">
 							<label for="job_type">Job Type</label>
 							<input type="text" class="form-control" id="job_type" name="job_type" placeholder="Enter Type" data-validation="required">

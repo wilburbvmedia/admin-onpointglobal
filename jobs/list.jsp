@@ -49,6 +49,7 @@ if( session.getAttribute("hrlogin") == null )
                 	<th class="tab">Date</th>
                 	<th class="tab">Job Title</th>
                 	<th class="tab">Location</th>
+                	<th class="tab">Domain</th>
                 	<th class="tab">Job Type</th>
                 	<th class="tab">Actions</th>                	
             	</tr>
@@ -59,6 +60,7 @@ if( session.getAttribute("hrlogin") == null )
                 	<th class="tab">Date</th>
                 	<th class="tab">Job Title</th>
                 	<th class="tab">Location</th>
+                	<th class="tab">Domain</th>
                 	<th class="tab">Job Type</th>
                 	<th class="tab">Actions</th>
             	</tr>
@@ -74,6 +76,7 @@ if( session.getAttribute("hrlogin") == null )
 					<td class="tab"><%=hm.get("date").toString()%></td>
 					<td class="tab"><%=hm.get("job_title").toString()%></td>
 					<td class="tab"><%=hm.get("location").toString()%></td>
+					<td class="tab"><%=hm.get("domain").toString()%></td>
 					<td class="tab"><%=hm.get("job_type").toString()%></td>
 					<td class="tab">
 						<div class="btn-group">

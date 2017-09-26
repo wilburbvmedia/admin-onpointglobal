@@ -6,7 +6,7 @@ try
 	com.servlets.Cache.reset();
 	response.setContentType("application/json");
    	response.setHeader("Content-Disposition", "inline");
-	ArrayList ra = DB.getData( "select * from jobs" );
+	ArrayList ra = DB.getData( "select * from jobs where domain = '" + request.getParameter("job_domain").toString() + "';" );
 
 	JSONArray json = new JSONArray();
 
