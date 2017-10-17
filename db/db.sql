@@ -5,7 +5,7 @@ CREATE TABLE applications(
   phone       int NOT NULL,
   subject     varchar(50),
   message     varchar(150),
-  cv          longblob,
+  cv         varchar(150),
   domain      varchar(100),
   PRIMARY KEY (id_application)
 )
