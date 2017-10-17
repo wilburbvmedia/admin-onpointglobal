@@ -44,7 +44,7 @@ ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,messa
                   <th class="tab">Subject</th>
                   <th class="tab">Message</th>
                   <th class="tab">Domain</th>
-                  <th class="tab">Resume</th>
+                  <th class="tab">Resume File Name</th>
                 </tr>
               </thead>
               <tfoot>
@@ -56,7 +56,7 @@ ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,messa
                   <th class="tab">Subject</th>
                   <th class="tab">Message</th>
                   <th class="tab">Domain</th>
-                  <th class="tab">Resume</th>
+                  <th class="tab">Resumen File Name</th>
                 </tr>
               </tfoot>
               <tbody>         
@@ -73,7 +73,7 @@ ArrayList ra = DB.getData( "select id_application,name,email,phone,subject,messa
                     <td class="tab"><%=hm.get("subject").toString()%></td>
                     <td class="tab"><%=hm.get("message").toString()%></td>
                     <td class="tab"><%=hm.get("domain").toString()%></td>
-                    <td class="tab"><a class="btncv" href="<%=hm.get("cv").toString()%>" download>Dowload</a></td>
+                    <td class="tab"><%=hm.get("cv").toString()%></td>
                   </tr>
                   <%
                 }
