@@ -8,7 +8,7 @@ CREATE TABLE applications(
   cv         varchar(150),
   domain      varchar(100),
   PRIMARY KEY (id_application)
-)
+);
 
 CREATE TABLE jobs(
   id_job      bigint(9) NOT NULL AUTO_INCREMENT,
@@ -19,4 +19,4 @@ CREATE TABLE jobs(
   domain      varchar(100),
   description  text,
   PRIMARY KEY (id_job)
-)
+);
