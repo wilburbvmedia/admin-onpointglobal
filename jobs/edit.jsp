@@ -44,7 +44,7 @@ if( session.getAttribute("hrlogin") == null )
 						</div>
 						<div class="form-group">
 							<label for="job_date">Date</label>
-							<input type="text" class="form-control" id="job_date" name="job_date" placeholder="Enter Date" data-validation="required" value="<%=hm.get("date").toString()%>">
+							<input type="text" class="form-control" id="job_date" name="job_date" placeholder="Enter Date" data-validation="required" value="<%=hm.get("date").toString()%>" data-date="">
 						</div>
 						<div class="form-group">
 							<label for="job_location">Location</label>

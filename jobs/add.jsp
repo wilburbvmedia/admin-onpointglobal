@@ -38,7 +38,7 @@ if( session.getAttribute("hrlogin") == null )
 						</div>
 						<div class="form-group">
 							<label for="job_date">Date</label>
-							<input type="text" class="form-control" id="job_date" name="job_date" placeholder="Enter Date" data-validation="required">
+							<input type="text" class="form-control" id="job_date" name="job_date" data-validation="required" data-date="" placeholder="YYYY/MM/DD">
 						</div>
 						<div class="form-group">
 							<label for="job_location">Location</label>
@@ -76,8 +76,6 @@ if( session.getAttribute("hrlogin") == null )
 	</section>
 	<!-- /.content -->
 </div>
-
-
 
 <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 <script>

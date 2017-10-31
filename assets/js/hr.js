@@ -96,4 +96,10 @@ $(document).ready(function() {
 		$("#logoutForm").submit();
 	});
 
+	$('[data-date]').datepicker({
+		orientation: 'bottom auto',
+		format: 'yyyy/mm/dd',
+		autoclose: true
+	});
+
 });
